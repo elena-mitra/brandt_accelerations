@@ -2,6 +2,9 @@ import numpy as np
 from astropy import units as u
 from f_calc_astrometric_acceleration import calc_astrometric_acceleration
 
+######################
+# Test for HD 159062 #
+######################
 def test_calcacc_HD159062():
     # HD 159062 data, should return an astrometric acceleration of 24.9 m/s/yr
 
@@ -29,10 +32,78 @@ def test_calcacc_HD159062():
                                   decgaiaepoch)
 
     expected_acceleration = 24.9 * u.mas*u.pc/u.yr**2
-    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=0.9)
-    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=0.9))
-    print("it's 5 o'clock")
+    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1)
+    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1))
 
 
 test_calcacc_HD159062()
 
+#####################
+# Test for HD 68017 #
+#####################
+
+def test_calcacc_HD68017():
+
+    plx = 46.327320*u.mas
+    pmrahip = -461.601650*u.mas/u.yr #mas/yr
+    pmragaia = -484.315120*u.mas/u.yr #mas/yr
+    pmrahg = -471.298460*u.mas/u.yr #mas/yr
+    pmdechip = -644.467300*u.yr #mas/yr
+    pmdecgaia = -642.974370*u.mas/u.yr #mas/yr
+    pmdechg = -639.023440*u.mas/u.yr #mas/yr
+    rahipepoch = 1991.069888*u.yr #yr
+    ragaiaepoch = 2015.762001*u.yr #yr
+    dechipepoch = 1991.335952*u.yr #yr
+    decgaiaepoch = 2015.713990*u.yr #yr
+    calculated_acceleration = calc_astrometric_acceleration(plx,
+                                  pmrahip,
+                                  pmragaia,
+                                  pmrahg,
+                                  pmdechip,
+                                  pmdecgaia,
+                                  pmdechg,
+                                  rahipepoch,
+                                  ragaiaepoch,
+                                  dechipepoch,
+                                  decgaiaepoch)
+    expected_acceleration = 113.8 * u.mas*u.pc/u.yr**2
+    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1)
+    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1))
+
+
+test_calcacc_HD68017()
+print("hello!")
+#####################
+# Test for Gl 86#
+#####################
+
+def test_calcacc_Gl86():
+
+    plx = 92.715950*u.mas
+    pmrahip = 2091.883000*u.mas/u.yr #mas/yr
+    pmragaia = 2124.853000*u.mas/u.yr #mas/yr
+    pmrahg = 2106.955000*u.mas/u.yr #mas/yr
+    pmdechip = 654.345200*u.yr #mas/yr
+    pmdecgaia = 638.091550*u.mas/u.yr #mas/yr
+    pmdechg = 641.619450*u.mas/u.yr #mas/yr
+    rahipepoch = 1991.226010*u.yr #yr
+    ragaiaepoch = 2015.771176*u.yr #yr
+    dechipepoch = 1991.377859*u.yr #yr
+    decgaiaepoch = 2015.753104*u.yr #yr
+    calculated_acceleration = calc_astrometric_acceleration(plx,
+                                  pmrahip,
+                                  pmragaia,
+                                  pmrahg,
+                                  pmdechip,
+                                  pmdecgaia,
+                                  pmdechg,
+                                  rahipepoch,
+                                  ragaiaepoch,
+                                  dechipepoch,
+                                  decgaiaepoch)
+    expected_acceleration = 76.5 * u.mas*u.pc/u.yr**2
+    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=0.9)
+    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=0.9))
+
+
+test_calcacc_Gl86()
