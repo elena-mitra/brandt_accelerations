@@ -3,7 +3,7 @@ from astropy import units as u
 from f_calc_astrometric_acceleration import calc_astrometric_acceleration
 
 ######################
-# Test for HD 159062 #
+# Test for HD 159062
 ######################
 def test_calcacc_HD159062():
     # HD 159062 data, should return an astrometric acceleration of 24.9 m/s/yr
@@ -39,7 +39,7 @@ def test_calcacc_HD159062():
 test_calcacc_HD159062()
 
 #####################
-# Test for HD 68017 #
+# Test for HD 68017
 #####################
 
 def test_calcacc_HD68017():
@@ -72,9 +72,9 @@ def test_calcacc_HD68017():
 
 
 test_calcacc_HD68017()
-print("hello!")
+
 #####################
-# Test for Gl 86#
+# Test for Gl 86
 #####################
 
 def test_calcacc_Gl86():
@@ -107,3 +107,5 @@ def test_calcacc_Gl86():
 
 
 test_calcacc_Gl86()
+
+print("astrometric acceleration test complete!")
