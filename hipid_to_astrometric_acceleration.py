@@ -3,7 +3,6 @@
 ## astrometric aceleration in m/s/yr                  ##
 ########################################################
 import pandas as pd
-import numpy as np
 from astropy import units as u
 
 # downloads data: Brandt Hipparcos-Gaia Catalog of Accelerations

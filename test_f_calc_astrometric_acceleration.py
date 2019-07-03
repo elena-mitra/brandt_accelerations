@@ -1,3 +1,7 @@
+########################################################################
+## This script is a test for f_calc_astrometric_acceleration function ##
+########################################################################
+
 import numpy as np
 from astropy import units as u
 from f_calc_astrometric_acceleration import calc_astrometric_acceleration
