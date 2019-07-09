@@ -33,10 +33,14 @@ def calc_astrometric_acceleration(plx,
     # = 4.74
     #####################################################################
 
-    acc_ra_num = (pmragaia - pmrahg) * 4.74 * d  # ∆µ (in mas/yr) * parallax (in parsec) converted to (mas pc/yr)
+    acc_ra_num = (pmragaia - pmrahg)* d  # ∆µ (in mas/yr) * parallax (in parsec) converted to (mas pc/yr)
     acc_ra_den = (ragaiaepoch - rahipepoch) / 2
-    acc_dec_num = (pmdecgaia - pmdechg) * 4.74 * d
+    acc_dec_num = (pmdecgaia - pmdechg) * d
     acc_dec_den = (decgaiaepoch - dechipepoch) / 2
+    # Conversion to acceleration units m/s/yr
+    acc_ra_num = acc_ra_num.to(u.m / u.second, equivalencies=u.dimensionless_angles())
+    acc_dec_num = acc_dec_num.to(u.m / u.second, equivalencies=u.dimensionless_angles())
+
     acc_ra = acc_ra_num / acc_ra_den
     acc_dec = acc_dec_num / acc_dec_den
 
