@@ -35,9 +35,9 @@ def test_calcacc_HD159062():
                                   dechipepoch,
                                   decgaiaepoch)
 
-    expected_acceleration = 24.9 * u.mas*u.pc/u.yr**2
-    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1)
-    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1))
+    expected_acceleration = 24.9 * u.m/u.s/u.yr
+    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=.2)
+    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=.2))
 
 
 test_calcacc_HD159062()
@@ -70,7 +70,7 @@ def test_calcacc_HD68017():
                                   ragaiaepoch,
                                   dechipepoch,
                                   decgaiaepoch)
-    expected_acceleration = 113.8 * u.mas*u.pc/u.yr**2
+    expected_acceleration = 113.8 * u.m/u.s/u.yr
     assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1)
     print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1))
 
@@ -105,9 +105,9 @@ def test_calcacc_Gl86():
                                   ragaiaepoch,
                                   dechipepoch,
                                   decgaiaepoch)
-    expected_acceleration = 76.5 * u.mas*u.pc/u.yr**2
-    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=0.9)
-    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=0.9))
+    expected_acceleration = 76.5 * u.m/u.s/u.yr
+    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1)
+    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=1))
 
 
 test_calcacc_Gl86()
