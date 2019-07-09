@@ -106,8 +106,8 @@ def test_calcacc_Gl86():
                                   dechipepoch,
                                   decgaiaepoch)
     expected_acceleration = 76.5 * u.m/u.s/u.yr
-    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=.4)
-    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=.4))
+    assert np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=.5)
+    print(np.isclose(calculated_acceleration.value, expected_acceleration.value, atol=.5))
 
 
 test_calcacc_Gl86()
