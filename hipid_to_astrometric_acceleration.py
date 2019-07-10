@@ -44,11 +44,11 @@ decgaiaepoch = hip_select['epoch_ra_gaia'].iloc[0]*u.yr #yr
 
 plx = (hip_select['parallax_gaia'].iloc[0])*u.mas #parallax in mas
 
-# calls function script "f_calc_astrometric_acceleration" which contains
-# the acceleration calculation
+#calls function "f_calc_astrometric_acceleration", a script that
+#contains the acceleration calculation
 from f_calc_astrometric_acceleration import calc_astrometric_acceleration
 
-# executes the acceleration calculation function
+#executes the acceleration calculation function
 print(calc_astrometric_acceleration(plx,
                                   pmrahip,
                                   pmragaia,
