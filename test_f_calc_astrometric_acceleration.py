@@ -112,4 +112,4 @@ def test_calcacc_Gl86():
 
 test_calcacc_Gl86()
 
-print("astrometric acceleration test complete!")
+print("astrometric acceleration test complete")
