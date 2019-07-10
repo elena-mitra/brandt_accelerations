@@ -17,7 +17,7 @@ def calc_astrometric_acceleration(plx,
     # Converts parallax to parsec
     d = plx.to(u.parsec, equivalencies=u.parallax())
 
-    acc_ra_num = (pmragaia - pmrahg)* d  # ∆µ (in mas/yr) * parallax (in parsec) converted to (mas pc/yr)
+    acc_ra_num = (pmragaia - pmrahg)* d  # del mu (in mas/yr) * parallax (in parsec) converted to (mas pc/yr)
     acc_ra_den = (ragaiaepoch - rahipepoch) / 2
     acc_dec_num = (pmdecgaia - pmdechg) * d
     acc_dec_den = (decgaiaepoch - dechipepoch) / 2
